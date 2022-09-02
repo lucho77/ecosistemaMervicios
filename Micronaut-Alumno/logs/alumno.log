@@ -6,3 +6,552 @@
 11:26:54.129 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
 11:26:55.719 [main] TRACE i.m.h.server.netty.NettyHttpServer - Binding ms-alumno server to *:0
 11:26:56.595 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 5607ms. Server Running: http://localhost:37879
+11:34:04.141 [main] INFO  i.m.context.DefaultBeanContext - Reading bootstrap environment configuration
+11:34:04.770 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.10.Final
+11:34:05.048 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11:34:05.285 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11:34:05.332 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+11:34:05.569 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+11:34:06.640 [main] TRACE i.m.h.server.netty.NettyHttpServer - Binding ms-alumno server to *:0
+11:34:07.297 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 3879ms. Server Running: http://localhost:32897
+11:37:22.402 [default-nioEventLoopGroup-1-4] ERROR i.m.d.registration.AutoRegistration - Error occurred during service registration with Eureka: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+io.micronaut.http.client.exceptions.HttpClientException: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$exchangeImpl$43(DefaultHttpClient.java:1340)
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$addInstrumentedListener$65(DefaultHttpClient.java:2686)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8761
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:875)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+11:40:48.457 [default-nioEventLoopGroup-1-4] ERROR i.m.d.registration.AutoRegistration - Error occurred de-registering service [ms-alumno] with Eureka: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+io.micronaut.http.client.exceptions.HttpClientException: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$exchangeImpl$43(DefaultHttpClient.java:1340)
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$addInstrumentedListener$65(DefaultHttpClient.java:2686)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:99)
+		at reactor.core.publisher.Flux.blockFirst(Flux.java:2600)
+		at io.micronaut.discovery.client.registration.DiscoveryServiceAutoRegistration.performDeregistration(DiscoveryServiceAutoRegistration.java:134)
+		at io.micronaut.discovery.eureka.registration.EurekaAutoRegistration.deregister(EurekaAutoRegistration.java:171)
+		at io.micronaut.discovery.registration.AutoRegistration.onApplicationEvent(AutoRegistration.java:61)
+		at io.micronaut.discovery.registration.AutoRegistration.onApplicationEvent(AutoRegistration.java:38)
+		at io.micronaut.context.event.ApplicationEventPublisherFactory.notifyEventListeners(ApplicationEventPublisherFactory.java:262)
+		at io.micronaut.context.event.ApplicationEventPublisherFactory.access$200(ApplicationEventPublisherFactory.java:60)
+		at io.micronaut.context.event.ApplicationEventPublisherFactory$2.publishEvent(ApplicationEventPublisherFactory.java:229)
+		at io.micronaut.http.server.netty.NettyHttpServer.stopInternal(NettyHttpServer.java:609)
+		at io.micronaut.http.server.netty.NettyHttpServer.stop(NettyHttpServer.java:323)
+		at io.micronaut.http.server.netty.NettyHttpServer.stop(NettyHttpServer.java:104)
+		at io.micronaut.discovery.client.registration.DiscoveryServiceAutoRegistration$1.onError(DiscoveryServiceAutoRegistration.java:86)
+		at reactor.core.publisher.StrictSubscriber.onError(StrictSubscriber.java:106)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.FluxError.subscribe(FluxError.java:43)
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8466)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.FluxError.subscribe(FluxError.java:43)
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8466)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134)
+		at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.checkTerminated(FluxSwitchMap.java:391)
+		at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.drain(FluxSwitchMap.java:338)
+		at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.innerError(FluxSwitchMap.java:424)
+		at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onError(FluxSwitchMap.java:517)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.FluxError.subscribe(FluxError.java:43)
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8466)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124)
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.onError(FluxTimeout.java:219)
+		at reactor.core.publisher.FluxCreate$BaseSink.error(FluxCreate.java:474)
+		at reactor.core.publisher.FluxCreate$SerializedFluxSink.drainLoop(FluxCreate.java:237)
+		at reactor.core.publisher.FluxCreate$SerializedFluxSink.drain(FluxCreate.java:213)
+		at reactor.core.publisher.FluxCreate$SerializedFluxSink.error(FluxCreate.java:189)
+		... 19 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8761
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:875)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+11:40:48.482 [default-nioEventLoopGroup-1-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11:40:48.491 [default-nioEventLoopGroup-1-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11:40:48.496 [default-nioEventLoopGroup-1-4] TRACE i.m.h.client.netty.DefaultHttpClient - Connection to http://localhost:8761/eureka/apps/ms-alumno/ms-alumno%3A32897 failed, but emitter already cancelled.
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:61)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:194)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:46)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:180)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:166)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:552)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:605)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:104)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:990)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:516)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:429)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:486)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+11:40:51.481 [Thread-0] INFO  io.micronaut.runtime.Micronaut - Embedded Application shutting down
+14:17:40.113 [main] INFO  i.m.context.DefaultBeanContext - Reading bootstrap environment configuration
+14:17:40.980 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.10.Final
+14:17:41.233 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:17:41.458 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:17:41.528 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:17:41.781 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+14:17:42.877 [main] TRACE i.m.h.server.netty.NettyHttpServer - Binding ms-alumno server to *:0
+14:17:43.539 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 4170ms. Server Running: http://localhost:44899
+14:17:54.326 [default-nioEventLoopGroup-1-5] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:44899 Received Request: POST /alumno/add
+14:17:54.328 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request POST /alumno/add
+14:17:54.340 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route POST - /alumno/add to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:17:54.857 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [com.lucho.ms.model.Alumno@576098cc] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@507e91d1
+14:17:54.909 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 201 - POST /alumno/add
+14:18:48.086 [default-nioEventLoopGroup-1-5] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:44899 Received Request: POST /alumno/add
+14:18:48.086 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request POST /alumno/add
+14:18:48.087 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route POST - /alumno/add to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:18:48.104 [default-nioEventLoopGroup-1-5] DEBUG i.m.http.server.RouteExecutor - Found matching exception handler for exception [save.alumno.email: must not be empty]:  ConstraintViolationException -> ErrorController#HttpResponse badRequest(HttpRequest request,ConstraintViolationException exception)
+14:18:48.116 [default-nioEventLoopGroup-1-5] ERROR c.l.ms.controller.ErrorController - Ocurrio un ERROR en la llamada
+com.lucho.ms.exception.ValidationException: Error en la URL o datos enviados
+	at com.lucho.ms.controller.ErrorController.badRequest(ErrorController.java:68)
+	at com.lucho.ms.controller.$ErrorController$Definition$Exec.dispatch(Unknown Source)
+	at io.micronaut.context.AbstractExecutableMethodsDefinition$DispatchedExecutableMethod.invoke(AbstractExecutableMethodsDefinition.java:378)
+	at io.micronaut.context.DefaultBeanContext$BeanExecutionHandle.invoke(DefaultBeanContext.java:3828)
+	at io.micronaut.web.router.AbstractRouteMatch.execute(AbstractRouteMatch.java:303)
+	at io.micronaut.web.router.RouteMatch.execute(RouteMatch.java:111)
+	at io.micronaut.http.context.ServerRequestContext.with(ServerRequestContext.java:103)
+	at io.micronaut.http.server.RouteExecutor.lambda$executeRoute$14(RouteExecutor.java:659)
+	at reactor.core.publisher.FluxDeferContextual.subscribe(FluxDeferContextual.java:49)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8466)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onSubscribe(FluxFlatMap.java:371)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8466)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onError(ReactorSubscriber.java:64)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:842)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:608)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onError(FluxFlatMap.java:451)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onError(ReactorSubscriber.java:64)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:842)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:608)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.innerError(FluxFlatMap.java:863)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onError(FluxFlatMap.java:990)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onError(ReactorSubscriber.java:64)
+	at reactor.core.publisher.Operators.error(Operators.java:198)
+	at reactor.core.publisher.FluxError.subscribe(FluxError.java:43)
+	at reactor.core.publisher.InternalFluxOperator.subscribe(InternalFluxOperator.java:62)
+	at reactor.core.publisher.FluxDeferContextual.subscribe(FluxDeferContextual.java:57)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8466)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.MonoCreate$DefaultMonoSink.success(MonoCreate.java:172)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$4.doOnComplete(RoutingInBoundHandler.java:965)
+	at io.micronaut.core.async.subscriber.CompletionAwareSubscriber.onComplete(CompletionAwareSubscriber.java:79)
+	at io.micronaut.http.server.netty.jackson.JsonContentProcessor$1.doOnComplete(JsonContentProcessor.java:136)
+	at io.micronaut.core.async.subscriber.CompletionAwareSubscriber.onComplete(CompletionAwareSubscriber.java:79)
+	at java.base/java.util.Optional.ifPresent(Optional.java:176)
+	at io.micronaut.core.async.processor.SingleThreadedBufferingProcessor.doOnComplete(SingleThreadedBufferingProcessor.java:48)
+	at io.micronaut.jackson.core.parser.JacksonCoreProcessor.doOnComplete(JacksonCoreProcessor.java:94)
+	at io.micronaut.core.async.subscriber.SingleThreadedBufferingSubscriber.onComplete(SingleThreadedBufferingSubscriber.java:71)
+	at io.micronaut.http.server.netty.jackson.JsonContentProcessor.doOnComplete(JsonContentProcessor.java:161)
+	at io.micronaut.core.async.subscriber.CompletionAwareSubscriber.onComplete(CompletionAwareSubscriber.java:79)
+	at io.micronaut.http.netty.reactive.HandlerPublisher.publishMessage(HandlerPublisher.java:383)
+	at io.micronaut.http.netty.reactive.HandlerPublisher.flushBuffer(HandlerPublisher.java:470)
+	at io.micronaut.http.netty.reactive.HandlerPublisher.publishMessageLater(HandlerPublisher.java:360)
+	at io.micronaut.http.netty.reactive.HandlerPublisher.complete(HandlerPublisher.java:423)
+	at io.micronaut.http.netty.reactive.HandlerPublisher.handlerRemoved(HandlerPublisher.java:418)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerRemoved(AbstractChannelHandlerContext.java:946)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerRemoved0(DefaultChannelPipeline.java:637)
+	at io.netty.channel.DefaultChannelPipeline.remove(DefaultChannelPipeline.java:477)
+	at io.netty.channel.DefaultChannelPipeline.remove(DefaultChannelPipeline.java:423)
+	at io.micronaut.http.netty.stream.HttpStreamsHandler.removeHandlerIfActive(HttpStreamsHandler.java:483)
+	at io.micronaut.http.netty.stream.HttpStreamsHandler.handleReadHttpContent(HttpStreamsHandler.java:319)
+	at io.micronaut.http.netty.stream.HttpStreamsHandler.channelRead(HttpStreamsHandler.java:282)
+	at io.micronaut.http.netty.stream.HttpStreamsServerHandler.channelRead(HttpStreamsServerHandler.java:134)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.HttpServerKeepAliveHandler.channelRead(HttpServerKeepAliveHandler.java:64)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.flow.FlowControlHandler.dequeue(FlowControlHandler.java:200)
+	at io.netty.handler.flow.FlowControlHandler.read(FlowControlHandler.java:139)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeRead(AbstractChannelHandlerContext.java:686)
+	at io.netty.channel.AbstractChannelHandlerContext.read(AbstractChannelHandlerContext.java:671)
+	at io.micronaut.http.netty.reactive.HandlerPublisher.requestDemand(HandlerPublisher.java:165)
+	at io.micronaut.http.netty.stream.HttpStreamsHandler$2.requestDemand(HttpStreamsHandler.java:273)
+	at io.micronaut.http.netty.reactive.HandlerPublisher$ChannelSubscription.receivedDemand(HandlerPublisher.java:556)
+	at io.micronaut.http.netty.reactive.HandlerPublisher$ChannelSubscription.lambda$request$0(HandlerPublisher.java:494)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+14:18:48.131 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [com.lucho.ms.util.Response@4d89615d] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@507e91d1
+14:18:48.158 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 400 - POST /alumno/add
+14:19:11.151 [default-nioEventLoopGroup-1-5] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:44899 Received Request: POST /alumno/add
+14:19:11.152 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request POST /alumno/add
+14:19:11.153 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route POST - /alumno/add to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:19:11.169 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [com.lucho.ms.model.Alumno@55e1d278] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@507e91d1
+14:19:11.171 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 201 - POST /alumno/add
+14:20:03.543 [default-nioEventLoopGroup-1-5] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:44899 Received Request: GET /alumno/show/1
+14:20:03.544 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request GET /alumno/show/1
+14:20:03.544 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route GET - /alumno/show/1 to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:20:10.120 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [com.lucho.ms.model.Alumno@3738f20a] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@507e91d1
+14:20:10.126 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 200 - GET /alumno/show/1
+14:20:26.787 [default-nioEventLoopGroup-1-5] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:44899 Received Request: GET /alumno/all
+14:20:26.787 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request GET /alumno/all
+14:20:26.787 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route GET - /alumno/all to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:20:26.798 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [[com.lucho.ms.model.Alumno@5c216456, com.lucho.ms.model.Alumno@5b75dec5]] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@507e91d1
+14:20:26.800 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 200 - GET /alumno/all
+14:20:36.036 [default-nioEventLoopGroup-1-5] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:44899 Received Request: GET /alumno/show/3
+14:20:36.037 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request GET /alumno/show/3
+14:20:36.037 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route GET - /alumno/show/3 to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:20:39.517 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 404 - GET /alumno/show/3
+14:20:49.874 [default-nioEventLoopGroup-1-5] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:44899 Received Request: GET /alumno/show/2
+14:20:49.874 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request GET /alumno/show/2
+14:20:49.874 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route GET - /alumno/show/2 to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:20:52.758 [default-nioEventLoopGroup-1-5] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [com.lucho.ms.model.Alumno@4af8a075] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@507e91d1
+14:20:52.760 [default-nioEventLoopGroup-1-5] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 200 - GET /alumno/show/2
+14:20:58.624 [default-nioEventLoopGroup-1-6] ERROR i.m.d.registration.AutoRegistration - Error occurred during service registration with Eureka: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+io.micronaut.http.client.exceptions.HttpClientException: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$exchangeImpl$43(DefaultHttpClient.java:1340)
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$addInstrumentedListener$65(DefaultHttpClient.java:2686)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8761
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:875)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+14:23:54.420 [main] INFO  i.m.context.DefaultBeanContext - Reading bootstrap environment configuration
+14:23:55.301 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.10.Final
+14:23:55.589 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:23:55.779 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:23:55.849 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:23:56.091 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+14:23:57.224 [main] TRACE i.m.h.server.netty.NettyHttpServer - Binding ms-alumno server to *:0
+14:23:57.894 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 4205ms. Server Running: http://localhost:35189
+14:26:20.703 [default-nioEventLoopGroup-1-4] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:35189 Received Request: PUT /alumno/update/1
+14:26:20.706 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request PUT /alumno/update/1
+14:26:20.717 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route PUT - /alumno/update/1 to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:27:13.057 [default-nioEventLoopGroup-1-6] ERROR i.m.d.registration.AutoRegistration - Error occurred during service registration with Eureka: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+io.micronaut.http.client.exceptions.HttpClientException: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$exchangeImpl$43(DefaultHttpClient.java:1340)
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$addInstrumentedListener$65(DefaultHttpClient.java:2686)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8761
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:875)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+14:27:24.520 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [com.lucho.ms.model.Alumno@5b250006] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@7fa97622
+14:27:24.565 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 201 - PUT /alumno/update/1
+14:27:50.669 [default-nioEventLoopGroup-1-4] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:35189 Received Request: GET /alumno/all
+14:27:50.670 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request GET /alumno/all
+14:27:50.670 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route GET - /alumno/all to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:27:50.685 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [[com.lucho.ms.model.Alumno@6b914316, com.lucho.ms.model.Alumno@782114b4]] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@7fa97622
+14:27:50.695 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 200 - GET /alumno/all
+14:28:04.083 [default-nioEventLoopGroup-1-4] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:35189 Received Request: GET /alumno/all
+14:28:04.083 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request GET /alumno/all
+14:28:04.084 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route GET - /alumno/all to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:28:04.087 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [[com.lucho.ms.model.Alumno@29b8d3de, com.lucho.ms.model.Alumno@30fcff78]] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@7fa97622
+14:28:04.097 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 200 - GET /alumno/all
+14:28:34.841 [default-nioEventLoopGroup-1-4] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:35189 Received Request: PUT /alumno/update/1
+14:28:34.841 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request PUT /alumno/update/1
+14:28:34.842 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route PUT - /alumno/update/1 to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:28:38.088 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [com.lucho.ms.model.Alumno@763d5d0c] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@7fa97622
+14:28:38.090 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 201 - PUT /alumno/update/1
+14:28:44.877 [default-nioEventLoopGroup-1-4] TRACE i.m.h.server.netty.NettyHttpServer - Server localhost:35189 Received Request: GET /alumno/all
+14:28:44.877 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Request GET /alumno/all
+14:28:44.878 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Matched route GET - /alumno/all to controller class com.lucho.ms.controller.$AlumnoController$Definition$Intercepted
+14:28:44.887 [default-nioEventLoopGroup-1-4] TRACE i.m.h.s.netty.RoutingInBoundHandler - Encoding emitted response object [[com.lucho.ms.model.Alumno@43c1ff7e, com.lucho.ms.model.Alumno@6b6ee1ba]] using codec: io.micronaut.json.codec.JsonMediaTypeCodec@7fa97622
+14:28:44.889 [default-nioEventLoopGroup-1-4] DEBUG i.m.h.s.netty.RoutingInBoundHandler - Response 200 - GET /alumno/all
+14:30:39.110 [default-nioEventLoopGroup-1-6] ERROR i.m.d.registration.AutoRegistration - Error occurred de-registering service [ms-alumno] with Eureka: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+io.micronaut.http.client.exceptions.HttpClientException: Client 'eureka': Connect Error: Connection refused: localhost/127.0.0.1:8761
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$exchangeImpl$43(DefaultHttpClient.java:1340)
+	at io.micronaut.http.client.netty.DefaultHttpClient.lambda$addInstrumentedListener$65(DefaultHttpClient.java:2686)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:99)
+		at reactor.core.publisher.Flux.blockFirst(Flux.java:2600)
+		at io.micronaut.discovery.client.registration.DiscoveryServiceAutoRegistration.performDeregistration(DiscoveryServiceAutoRegistration.java:134)
+		at io.micronaut.discovery.eureka.registration.EurekaAutoRegistration.deregister(EurekaAutoRegistration.java:171)
+		at io.micronaut.discovery.registration.AutoRegistration.onApplicationEvent(AutoRegistration.java:61)
+		at io.micronaut.discovery.registration.AutoRegistration.onApplicationEvent(AutoRegistration.java:38)
+		at io.micronaut.context.event.ApplicationEventPublisherFactory.notifyEventListeners(ApplicationEventPublisherFactory.java:262)
+		at io.micronaut.context.event.ApplicationEventPublisherFactory.access$200(ApplicationEventPublisherFactory.java:60)
+		at io.micronaut.context.event.ApplicationEventPublisherFactory$2.publishEvent(ApplicationEventPublisherFactory.java:229)
+		at io.micronaut.http.server.netty.NettyHttpServer.stopInternal(NettyHttpServer.java:609)
+		at io.micronaut.http.server.netty.NettyHttpServer.stop(NettyHttpServer.java:323)
+		at io.micronaut.http.server.netty.NettyHttpServer.stop(NettyHttpServer.java:104)
+		at io.micronaut.discovery.client.registration.DiscoveryServiceAutoRegistration$1.onError(DiscoveryServiceAutoRegistration.java:86)
+		at reactor.core.publisher.StrictSubscriber.onError(StrictSubscriber.java:106)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.FluxError.subscribe(FluxError.java:43)
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8466)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.FluxDelaySubscription$DelaySubscriptionMainSubscriber.onError(FluxDelaySubscription.java:194)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.FluxError.subscribe(FluxError.java:43)
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8466)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134)
+		at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.checkTerminated(FluxSwitchMap.java:391)
+		at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.drain(FluxSwitchMap.java:338)
+		at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.innerError(FluxSwitchMap.java:424)
+		at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onError(FluxSwitchMap.java:517)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.FluxError.subscribe(FluxError.java:43)
+		at reactor.core.publisher.Flux.subscribe(Flux.java:8466)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124)
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.onError(FluxTimeout.java:219)
+		at reactor.core.publisher.FluxCreate$BaseSink.error(FluxCreate.java:474)
+		at reactor.core.publisher.FluxCreate$SerializedFluxSink.drainLoop(FluxCreate.java:237)
+		at reactor.core.publisher.FluxCreate$SerializedFluxSink.drain(FluxCreate.java:213)
+		at reactor.core.publisher.FluxCreate$SerializedFluxSink.error(FluxCreate.java:189)
+		... 19 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:8761
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:875)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+14:30:39.136 [default-nioEventLoopGroup-1-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:30:39.139 [default-nioEventLoopGroup-1-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:30:39.150 [default-nioEventLoopGroup-1-6] TRACE i.m.h.client.netty.DefaultHttpClient - Connection to http://localhost:8761/eureka/apps/ms-alumno/ms-alumno%3A35189 failed, but emitter already cancelled.
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:61)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:194)
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:46)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:180)
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:166)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:552)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:605)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:104)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:990)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:516)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:429)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:486)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+14:30:42.136 [Thread-0] INFO  io.micronaut.runtime.Micronaut - Embedded Application shutting down
