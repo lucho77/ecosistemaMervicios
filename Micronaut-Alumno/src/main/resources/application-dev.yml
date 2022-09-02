@@ -1,0 +1,20 @@
+micronaut:
+  application:
+    name: msTestLucho
+  server:
+    port: 8082    
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/luchoDB
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: 'kasparov'
+    dialect: POSTGRES
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+netty:
+  default:
+    allocator:
+      max-order: 3
+      
+#java -Dmicronaut.environments=dev -jar myapp.jar
+
