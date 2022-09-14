@@ -2,6 +2,8 @@ package com.examenes.service;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -58,6 +60,9 @@ public class ReportServiceImpl implements ReportService {
 			map.put("archivoMaqueta",genericaDTO.getArchivoMaqueta() );
 			map.put("archivoFinal",genericaDTO.getArchivoFinal() );
 			map.put("tipo",genericaDTO.getTipo() );
+			URL urlLogo =  new URL("classpath:imagenes/logoRUS.jpg");
+			map.put("logo",urlLogo );
+
 			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, map, dataSource);
 			
 			switch (genericaDTO.getTipo())
@@ -80,6 +85,10 @@ public class ReportServiceImpl implements ReportService {
 		catch (ClassNotFoundException e) 
 		{
 			log.error("JRException : ", e.getMessage(), e.getCause());
+		}		
+		catch (MalformedURLException e) 
+		{
+			log.error("URL exception : ", e.getMessage(), e.getCause());
 		}		
 		return true;
 	

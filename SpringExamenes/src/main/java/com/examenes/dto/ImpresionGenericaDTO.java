@@ -8,7 +8,7 @@ public class ImpresionGenericaDTO {
     private    String archivoMaqueta;
     private	   String archivoFinal; 
     private	   String tipo;
-    private	   Map<String, Object> parametros; 
+    private	   Map<String, ParametroDTO> parametros; 
     private    List<Object>list;
     private    String classDTO;
 	
@@ -30,12 +30,7 @@ public class ImpresionGenericaDTO {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public Map<String, Object> getParametros() {
-		return parametros;
-	}
-	public void setParametros(Map<String, Object> parametros) {
-		this.parametros = parametros;
-	}
+
 	public List<Object> getList() {
 		return list;
 	}
@@ -48,5 +43,12 @@ public class ImpresionGenericaDTO {
 	public void setClassDTO(String classDTO) {
 		this.classDTO = classDTO;
 	}
-    
+	public Map<String, ParametroDTO> getParametros() {
+		return parametros;
+	}
+	public void setParametros(Map<String, ParametroDTO> parametros) {
+		this.parametros = parametros;
+	}
+
+	
 }
