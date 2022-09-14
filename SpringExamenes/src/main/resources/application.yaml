@@ -1,0 +1,36 @@
+management:
+    endpoints:
+      web:
+        exposure:
+          include: health,info,metrics,prometheus
+        base-path: /manage
+    metrics.export.prometheus.enabled: true
+    endpoint:
+      prometheus:
+        enabled: true
+server:
+    port: ${MS_PORT:9325}
+    servlet:
+      contextPath: ${CONTEXT_PATH:/examenes}
+spring:
+  datasource:
+    url: ${MYSQL_URI}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASS}
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+  application:
+    name: ms-examenes
+  mvc.pathmatch.matching-strategy: ANT_PATH_MATCHER
+
+  profiles:
+    active: '@actveProfile@'
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+jasper.report.path: /home/luciano/desarrollo/jasper
