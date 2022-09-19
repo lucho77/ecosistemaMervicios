@@ -34,7 +34,7 @@ public class AlumnoService {
         alumnoRepository.delete(alumnno.orElseThrow(()-> new AlumnoException("No se ha encontrado el alumno a eliminar")));
     }
 
-    public void update(@NotNull Long id, @NotNull Alumno alumno) {
+    public Alumno update(@NotNull Long id, @NotNull Alumno alumno) {
         Optional<Alumno>a = findById(id);
         if(a.isPresent()) {
             Alumno alumnobd = a.get();
@@ -42,7 +42,7 @@ public class AlumnoService {
             alumnobd.setEmail(alumno.getEmail());
             alumnobd.setNombre(alumno.getNombre());
         	alumnoRepository.update(alumnobd);       
-        	return;
+        	return alumnobd;
         }
         throw  new AlumnoException("No se ha encontrado el alumno a modificar");
         

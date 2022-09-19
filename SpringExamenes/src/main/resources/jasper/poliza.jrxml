@@ -1,0 +1,1960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PolizaTransporte" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="585" leftMargin="10" rightMargin="0" topMargin="10" bottomMargin="0" scriptletClass="coop.tecso.foundation.common.print.ScriptLetRecibo" uuid="75dc8991-7004-46c2-9fa3-caff0e544500">
+	<property name="ireport.zoom" value="1.3636363636363642"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.layers" value="##Thu Oct 16 10:43:13 ART 2014\nlayer.3.id=3\nlayer.2.visible=true\nlayer.1.name=Layer 1\nlayer.0.visible=true\nlayer.2.id=2\nlayer.2.name=Layer 2\nlayer.3.visible=false\nlayer.1.id=1\nlayer.1.visible=true\nlayer.3.name=Layer 3\nlayer.0.id=0\nlayer.0.name=Background"/>
+	<style name="impar" mode="Transparent">
+		<paragraph lineSpacing="Single"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($V{REPORT_COUNT}.intValue() % 2 != 0)]]></conditionExpression>
+			<style mode="Opaque" backcolor="#C7C7C7">
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="41aaa0db-4865-4ca0-af74-efe6744ffe95"/>
+	<parameter name="logo" class="java.net.URL"/>
+	<parameter name="SumaAseguradaFinal" class="java.lang.Double">
+		<parameterDescription><![CDATA[SumaAseguradaFinal]]></parameterDescription>
+	</parameter>
+	<parameter name="firmaPresidente" class="java.net.URL"/>
+	<parameter name="hojaBlanca" class="java.lang.Boolean">
+		<parameterDescription><![CDATA[hojaBlanca]]></parameterDescription>
+	</parameter>
+	<parameter name="conAcreedorPrendario" class="java.lang.Boolean"/>
+	<parameter name="debitoAutomatico" class="java.lang.String"/>
+	<parameter name="esSeguroFlota" class="java.lang.Boolean"/>
+	<parameter name="localidadIAView" class="java.lang.String"/>
+	<parameter name="domicilioIAView" class="java.lang.String"/>
+	<parameter name="encabezadoFrentePoliza" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="idPagoFacil" class="java.lang.String">
+		<fieldDescription><![CDATA[idPagoFacil]]></fieldDescription>
+	</field>
+	<field name="endoso" class="java.lang.Integer">
+		<fieldDescription><![CDATA[endoso]]></fieldDescription>
+	</field>
+	<field name="motivoEndoso" class="java.lang.String">
+		<fieldDescription><![CDATA[motivoEndoso]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.localidadEmision.nombre]]></fieldDescription>
+	</field>
+	<field name="inicioVigencia" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.inicioVigencia]]></fieldDescription>
+	</field>
+	<field name="renueva" class="java.lang.String">
+		<fieldDescription><![CDATA[renueva]]></fieldDescription>
+	</field>
+	<field name="fechaEmision" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.fechaEmision]]></fieldDescription>
+	</field>
+	<field name="tomadorView" class="java.lang.String">
+		<fieldDescription><![CDATA[tomadorView]]></fieldDescription>
+	</field>
+	<field name="numeroPolizaView" class="java.lang.String">
+		<fieldDescription><![CDATA[numeroPolizaView]]></fieldDescription>
+	</field>
+	<field name="cuitTomador" class="java.lang.String">
+		<fieldDescription><![CDATA[cuitTomador]]></fieldDescription>
+	</field>
+	<field name="productorApellidoNombre" class="java.lang.String">
+		<fieldDescription><![CDATA[productorApellidoNombre]]></fieldDescription>
+	</field>
+	<field name="matricula" class="java.lang.String">
+		<fieldDescription><![CDATA[matriculaProductor]]></fieldDescription>
+	</field>
+	<field name="codProd" class="java.lang.Long">
+		<fieldDescription><![CDATA[poliza.productor.codigo]]></fieldDescription>
+	</field>
+	<field name="vigenciaDesde" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.inicioVigencia]]></fieldDescription>
+	</field>
+	<field name="vigenciaHasta" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.finVigencia]]></fieldDescription>
+	</field>
+	<field name="bolsa" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.productor.bolsaView]]></fieldDescription>
+	</field>
+	<field name="primaTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[poliza.primaTotal]]></fieldDescription>
+	</field>
+	<field name="cuotaSocial" class="java.lang.Double">
+		<fieldDescription><![CDATA[poliza.cuotaSocial]]></fieldDescription>
+	</field>
+	<field name="financiero" class="java.lang.Double">
+		<fieldDescription><![CDATA[poliza.financiero]]></fieldDescription>
+	</field>
+	<field name="impuesto" class="java.lang.Double">
+		<fieldDescription><![CDATA[poliza.impuesto]]></fieldDescription>
+	</field>
+	<field name="iva" class="java.lang.Double">
+		<fieldDescription><![CDATA[poliza.iva]]></fieldDescription>
+	</field>
+	<field name="percepcionIva" class="java.lang.Double">
+		<fieldDescription><![CDATA[percepcion]]></fieldDescription>
+	</field>
+	<field name="premioCotizado" class="java.lang.Double">
+		<fieldDescription><![CDATA[poliza.premioCotizado]]></fieldDescription>
+	</field>
+	<field name="premioTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[poliza.premioTotal]]></fieldDescription>
+	</field>
+	<field name="porcentajeComision" class="java.lang.Double">
+		<fieldDescription><![CDATA[poliza.porcentajeComision]]></fieldDescription>
+	</field>
+	<field name="cuotasIzquierda" class="java.lang.String">
+		<fieldDescription><![CDATA[seccionCuotaIzq]]></fieldDescription>
+	</field>
+	<field name="cuotasDerecha" class="java.lang.String">
+		<fieldDescription><![CDATA[seccionCuotaDer]]></fieldDescription>
+	</field>
+	<field name="tieneCasco" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[tieneCasco]]></fieldDescription>
+	</field>
+	<field name="codigoSeguimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.codigoSeguimiento.codigo]]></fieldDescription>
+	</field>
+	<field name="nroSocio" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.socio.numeroView]]></fieldDescription>
+	</field>
+	<field name="esDocPersonal" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[poliza.socio.persona.esDocPersonal]]></fieldDescription>
+	</field>
+	<field name="codCobrador" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.codigoCobrador]]></fieldDescription>
+	</field>
+	<field name="observacion" class="java.lang.String">
+		<fieldDescription><![CDATA[observacionView]]></fieldDescription>
+	</field>
+	<field name="codigoBarraFrente" class="java.lang.String">
+		<fieldDescription><![CDATA[codigoBarraFrente]]></fieldDescription>
+	</field>
+	<field name="pagoFacil" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[pagoFacil]]></fieldDescription>
+	</field>
+	<field name="domicilioTomadorView" class="java.lang.String">
+		<fieldDescription><![CDATA[domicilioTomadorView]]></fieldDescription>
+	</field>
+	<field name="tomadorNoAsegurado" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[tomadorNoAsegurado]]></fieldDescription>
+	</field>
+	<field name="aseguradoView" class="java.lang.String"/>
+	<field name="domicilioAseguradoView" class="java.lang.String"/>
+	<field name="localidadAseguradoView" class="java.lang.String">
+		<fieldDescription><![CDATA[localidadAseguradoView]]></fieldDescription>
+	</field>
+	<field name="labelParaDniCuitOCuilTomador" class="java.lang.String"/>
+	<field name="dniCuitOCuilTomador" class="java.lang.String"/>
+	<field name="simbolo" class="java.lang.String">
+		<fieldDescription><![CDATA[poliza.moneda.simbolo]]></fieldDescription>
+	</field>
+	<field name="sumaAseguradaNumeric" class="java.lang.Double">
+		<fieldDescription><![CDATA[sumaAseguradaTotal]]></fieldDescription>
+	</field>
+	<field name="codigoPagosLink" class="java.lang.String">
+		<fieldDescription><![CDATA[codigoPagosLink]]></fieldDescription>
+	</field>
+	<field name="tea" class="java.lang.Float">
+		<fieldDescription><![CDATA[poliza.ramo.tea]]></fieldDescription>
+	</field>
+	<variable name="gastosAd" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{porcentajeComision}*$F{premioTotal}/100]]></variableExpression>
+	</variable>
+	<variable name="gastoExplotacion" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{primaTotal}*0.03]]></variableExpression>
+	</variable>
+	<variable name="primaPura" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{primaTotal}-$V{gastosAd}-$V{gastoExplotacion}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<image isUsingCache="true">
+				<reportElement x="10" y="10" width="188" height="54" uuid="a89a6eab-f229-4aca-9b6a-78900f358c12">
+					<property name="ireport.layer" value="2"/>
+					<printWhenExpression><![CDATA[true]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement mode="Transparent" x="268" y="0" width="304" height="74" uuid="5abd6014-fff4-43b2-92dd-09d306b8f773">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="269" y="0" width="302" height="74" uuid="06f02640-0497-4230-aaf4-bfd71ef43f87"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{encabezadoFrentePoliza}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="532" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="268" y="16" width="304" height="109" uuid="dae8ea8a-7904-43c0-a0bc-3792bf4c494a">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="5" y="26" width="113" height="15" uuid="30256f4d-77ae-4fd5-a5e9-f56415bacc0b">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Motivo del Endoso:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="26" width="163" height="15" uuid="93304b08-518f-42ea-8416-a277a4f3be24">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{motivoEndoso}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="38" width="57" height="15" uuid="e0e0f32e-c2e2-4b76-abe0-a1f0c63dc7f9">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Sección:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="38" width="133" height="15" uuid="5f4fffdb-821b-4e6b-b25c-d7161a0e22e5">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[TRANSPORTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="50" width="57" height="15" uuid="95367476-ba79-40bf-b03e-1ee9f682e3f0">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Renueva:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="52" y="50" width="104" height="15" uuid="03f1e3f2-f197-4196-966c-9304bb91977e">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{renueva}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="62" width="106" height="15" uuid="ac7e622e-86d8-4015-bc33-3b76eefa0ff9">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Lugar de Emisión:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="89" y="62" width="180" height="15" uuid="a7cf35e1-e343-4303-a326-9ff4ae9c6144">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="74" width="45" height="15" uuid="da06dddd-ba24-428b-8d27-aedb8829460e">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="40" y="74" width="194" height="15" uuid="15121ab6-19e8-46d5-9aad-8ed35daf45c7">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaEmision}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="274" y="34" width="63" height="15" uuid="876c6d7f-4720-4e58-8ab6-bfa3835a7218">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Asegurado:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="337" y="34" width="234" height="15" uuid="2d5c868b-35fa-41ac-bea2-53738b0e9d08">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aseguradoView}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="274" y="54" width="87" height="15" uuid="2198f88c-22f9-43ce-85dc-1d61122302f6">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Domicilio Real:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="72" width="60" height="15" uuid="0d1f2b68-72db-4e5f-87f0-e8d3a57a83f3">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Localidad:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="325" y="72" width="238" height="15" uuid="99361a79-ecdf-4e30-9c1f-cfc5f3fb8c16">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{localidadAseguradoView}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="89" width="124" height="15" uuid="5b81cc21-9404-4dba-a4c3-73923ec6b07d">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroPolizaView}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="90" width="104" height="15" uuid="fb674478-252e-449f-8714-f979a1b8229a">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dniCuitOCuilTomador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="15" width="42" height="15" uuid="44e5f1a4-fd09-4b97-98c7-8abcce7c9d09">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Póliza:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="0" backcolor="#D2D0D0" uuid="b2ae468b-2497-43a3-a20b-ae94099502c2">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="40" y="15" width="139" height="15" uuid="1bdd48a9-12a0-4710-b495-077da3b10ace">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroPolizaView}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="91" width="57" height="15" uuid="429c13fd-81cb-4aa4-999a-edc918b2bad1">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Productor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="62" y="91" width="200" height="15" uuid="c9b11879-a74c-4f19-bdaf-c88133f24262">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productorApellidoNombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="106" width="57" height="15" uuid="bf1c1717-1a72-43c0-b2d3-08091d252493">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Matrícula:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="62" y="106" width="163" height="15" uuid="0e819d9a-1943-439c-bf3f-d38542a5e830">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="274" y="107" width="72" height="15" uuid="1531456d-7359-47ed-ad3d-16606dd54225">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Asociado N°:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="107" width="58" height="15" uuid="91738f04-c3e2-4747-8a77-3f3d8b7e6675">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Productor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="107" width="58" height="15" uuid="6a44aea0-4141-417f-9d1c-adc1102243aa">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cobrador:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="107" width="36" height="15" uuid="452822c7-6042-4039-b192-647ad092cbf1">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codProd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="15" width="45" height="15" uuid="f1b80a1f-4505-438b-a567-2ce0951c8152">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endoso}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="16" width="268" height="74" uuid="b96770a6-2d87-4e6f-8192-e13bf1d28945">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="90" width="268" height="35" uuid="1b48968c-bc26-479e-9875-29015862171a">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="5" y="140" width="45" height="15" uuid="a232c38c-0a0c-4e0b-9d01-34f559ed1cab">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Desde:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="5" y="151" width="35" height="15" uuid="4b2fb4d1-7d25-4188-a895-f5ca7ac36746">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Hasta:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="40" y="140" width="78" height="15" uuid="ba672f88-677c-46cc-991e-cb1fa91cc133">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vigenciaDesde}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="40" y="151" width="78" height="15" uuid="fc0cd994-1053-4f71-ab37-b90b83212037">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vigenciaHasta}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="448" y="126" width="124" height="16" backcolor="#D0CBCB" uuid="17d4ffef-ff27-4053-bef8-750a4e878a1f">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="166" width="572" height="67" uuid="1db21e01-5011-4acc-98a2-f5780ca4ad04">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="125" width="268" height="16" backcolor="#D0CBCB" uuid="60abc4d1-5689-4c0f-854e-8f505da80185">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="448" y="141" width="124" height="25" uuid="03156976-b962-4824-a8b2-52ecd1187a79">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="268" height="16" backcolor="#D0CBCB" uuid="b2b47ffd-e7b8-4a8e-9772-6ee3a7a0146a">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<componentElement>
+				<reportElement x="274" y="128" width="170" height="36" uuid="13408a07-f8a8-4127-959e-dc6e2fbca3ee"/>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.5" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$F{codigoBarraFrente}]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+			<staticText>
+				<reportElement mode="Transparent" x="5" y="125" width="113" height="15" uuid="27547450-ae25-456d-8cca-d9f9eb52348b">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Vigencia:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="268" y="0" width="304" height="16" backcolor="#D0CBCB" uuid="24e0b772-178f-40df-aa18-cd60c767748a">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="166" width="572" height="16" backcolor="#D0CBCB" uuid="b4713120-e0ad-42cf-b237-c15554233abd">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="274" y="0" width="293" height="15" uuid="1bb1e698-ad20-4415-bfa5-ac71cce6a4c4">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Datos del Tomador / Asegurado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="6" y="167" width="149" height="15" uuid="77854c00-629a-4313-9b83-ca99a3808a85">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Liquidación del Premio]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="249" width="279" height="89" uuid="38e5ee04-ee18-463f-9af5-33bb4ba68447">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="233" width="572" height="16" backcolor="#D0CBCB" uuid="9839f9b7-b792-4fa1-8b3a-81e001d57731">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="279" y="249" width="293" height="89" uuid="3f3d573a-7302-45e8-ac9d-9d22586e647d">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="6" y="258" width="274" height="166" uuid="f2f0236f-3532-4deb-86f1-748f602e63f8">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuotasIzquierda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="258" width="282" height="166" uuid="3f5f23bf-5088-431a-ada3-38d6758a018d">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuotasDerecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="6" y="233" width="84" height="15" uuid="6bb4a3fb-8e3f-44d0-a7f2-4758a6094c36">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Plan de Pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="6" y="249" width="45" height="12" uuid="d36bcbfc-c41d-49f7-8046-f97187191650">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cuota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="60" y="249" width="83" height="12" uuid="dee38e28-33c1-43e2-9f0c-7604a25552df">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Vencimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="178" y="249" width="65" height="12" uuid="bc17481b-ee86-499a-aff3-9090ae061742">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="288" y="249" width="45" height="12" uuid="ad02a483-7cdb-4ce5-a6ee-e10b27cbadc1">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cuota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="344" y="249" width="80" height="12" uuid="7816dbc9-6d2a-449b-8eb1-bc8b3af8e8d3">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Vencimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="462" y="249" width="65" height="12" uuid="feb211a8-848a-4ffb-99f7-754af48c183e">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="338" width="572" height="16" backcolor="#D0CBCB" uuid="52586d01-07e6-4ba1-b1c0-a1d62bfa5bce">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="6" y="338" width="88" height="17" uuid="f897b0e1-178e-418a-92af-67ac3c9ca5a1"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Observaciones:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="354" width="572" height="87" uuid="e280cf95-0125-4b54-a2e8-6d42b9e9fc88">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="5" y="443" width="471" height="31" uuid="a7484cde-b17a-4309-9a28-b948f4e53a4a">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement markup="styled">
+					<font size="6"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[<b>IMPORTANTE:</b> Los asegurados podrán solicitar información ante la Superintendencia de Seguros de la Nación con relación a la situación económico
+financiera de la entidad aseguradora, dirigiéndose personalmente o por nota a Julio A. Roca 721 (C.C. 1067), Ciudad de Buenos Aires, o a los teléfonos:
+0800-666-8400 (línea gratuita)-(011)4338-4000 (líneas rotativas), en el horario de 10:30 a 17:30. Podrá consultarse via Internet en la siguiente dirección:
+http://wwww.ssn.gov.ar.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="474" width="471" height="16" uuid="23f07ee2-7bb0-4f03-911e-22a866bba346">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement markup="styled">
+					<font size="6"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[<b>FIRMA FACSIMIL DE PÓLIZA:</b> La presente Póliza se suscribe mediante firma facsimilar conforme lo previsto en el punto 7.8 del Reglamento
+General de la Actividad Aseguradora.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="355" width="572" height="86" uuid="a114deea-11b8-4c7a-a3af-59e8ebdcbe7c"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{observacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="466" y="123" width="106" height="15" uuid="afef6521-b9be-407d-852a-11b20450d3ac">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Bolsa de Envío]]></text>
+			</staticText>
+			<image hAlign="Center" isUsingCache="true">
+				<reportElement positionType="Float" x="457" y="439" width="106" height="46" uuid="41d84125-7584-4104-ac75-1a67605b0074">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{firmaPresidente}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="451" y="472" width="117" height="33" uuid="a5dbbd83-3025-46dd-9bcd-1894cd1b3f26">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[RIO URUGUAY SEGUROS Coop.Ltda.
+Cr. Juan Carlos L. Godoy
+PRESIDENTE
+Consejo de Administración]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="441" width="448" height="33" uuid="085bf9a9-031f-4444-9237-79e6347459be">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="474" width="448" height="15" uuid="2df00040-3e79-4a41-97b2-67e7d3660a7d">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="448" y="441" width="124" height="64" uuid="82d69a99-a301-4189-9738-8499df7c0543">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="17" y="505" width="149" height="15" uuid="56d7e7a7-1eac-489b-8c78-49eacb82d074">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Código Seguimiento SSN:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="155" y="505" width="149" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="a42533ae-ce0b-452f-a60b-cb05956e5d17">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoSeguimiento}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="489" width="448" height="16" backcolor="#D0CBCB" uuid="069aa4df-de46-4f87-abbc-79c023d31e78">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="444" y="515" width="123" height="13" uuid="f4e2f4f6-0c0f-4073-b123-f749fa744134">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Continúa en la página 2.-]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="448" y="141" width="124" height="26" uuid="55dd0281-bbb5-45ad-af6e-561f16c5216f">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bolsa}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="346" y="107" width="52" height="15" uuid="a8819802-2016-4938-b2ff-545dcb8f0bd4">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nroSocio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="90" width="63" height="15" uuid="ffb6d796-be2c-4324-8946-ef6e00f9c512"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{labelParaDniCuitOCuilTomador}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="549" y="107" width="23" height="15" uuid="a589e0f8-b575-47ae-8d49-dcc25e03c70e">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codCobrador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="489" width="471" height="16" uuid="c8d8b3f1-a1fa-44f7-ba82-16e91f0fa4f1">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement markup="styled">
+					<font size="6"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[<b>IMPORTANTE:</b> Si el texto de esta póliza difiere del contenido de la propuesta, la diferencia se considerará aprobada por el Asegurado si no reclama
+dentro de un mes de haber recibido la póliza (Art.12 - Ley de Seguros)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="179" y="15" width="46" height="15" uuid="59232c2a-5f89-45df-afa5-1a2b674f4252">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Endoso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="90" y="233" width="474" height="15" uuid="0df04df5-2760-4898-b2d9-771fe05532a6">
+					<property name="ireport.layer" value="1"/>
+					<printWhenExpression><![CDATA[!($P{debitoAutomatico}.isEmpty()) && ($P{debitoAutomatico}.length() > 0)]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Las cuotas serán debitadas de la tarjeta ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="274" y="233" width="294" height="15" uuid="df99b6e4-1c61-4018-870c-2ff46de72e66">
+					<property name="ireport.layer" value="1"/>
+					<printWhenExpression><![CDATA[!($P{debitoAutomatico}.isEmpty()) &&
+($P{debitoAutomatico}.length() > 0)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{debitoAutomatico}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="141" width="268" height="1" uuid="de14316b-7378-4813-b943-e7b9b5493941"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="124" width="268" height="1" uuid="240b47e4-9989-41ea-8b25-d217e02467c4"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="572" y="124" width="1" height="42" uuid="a7e7e8c4-6824-4493-b805-085fa9bd7327"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="124" width="1" height="42" uuid="0e7b2d67-3b51-4009-bab0-b2c09a6abfe4"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="448" y="142" width="124" height="1" uuid="daa531f5-f71f-42d1-99d8-5b079d638727"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="345" y="55" width="226" height="15" uuid="fc2da47c-f4c1-4100-8cf0-6ecfd3216760">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domicilioAseguradoView}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="274" y="17" width="60" height="15" uuid="de9d989d-07c2-4d89-b87b-7cad15978eee">
+					<property name="ireport.layer" value="1"/>
+					<printWhenExpression><![CDATA[$F{tomadorNoAsegurado}]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tomador:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="325" y="17" width="246" height="15" uuid="d024edac-587b-4869-9f9b-6a115fcb3dff">
+					<property name="ireport.layer" value="1"/>
+					<printWhenExpression><![CDATA[$F{tomadorNoAsegurado}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tomadorView}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="267" y="125" width="1" height="41" uuid="ee30abbc-0269-448f-870b-60085c6e32ac"/>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="204" y="206" width="72" height="15" uuid="21d3a7f3-90c5-4f6d-bf95-f74db1203213">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Impuestos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="204" y="182" width="72" height="15" uuid="24f0e13d-ddc0-4c18-8e2d-784448ec86e3">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Percepción:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="305" y="194" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="3a454d23-385a-4064-939b-d353321a4b33">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.formatNumber($F{iva})]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="112" y="194" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="b92f8574-18a2-4460-8baf-5bf16852ba98">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.formatNumber($F{financiero})]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="305" y="182" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="3565f7fd-b61e-4ae1-b6f1-fd4dd7585eb6">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.formatNumber($F{percepcionIva})]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="112" y="218" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="f8f0f895-1e6e-4c9e-91f6-e3f3a4ca29b3">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.formatNumberNoDecimalNoSymbol($F{cuotaSocial})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="14" y="194" width="72" height="15" uuid="4a7744e2-2e0f-454c-a5f7-942642191e4b">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Rec.Financ.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="399" y="218" width="72" height="15" uuid="86f5cf82-d645-47c3-bb11-af9447fcb6fe">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Premio:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="305" y="206" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="cd2cf987-b87c-4317-8419-93d22b29738c">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.formatNumber($F{impuesto})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="399" y="206" width="72" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="ffbbb810-bac0-47a0-b4b0-1e3850716cd8">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[***********]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="499" y="218" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="dee8c346-1c82-49f2-87fd-af3454c7b8a0">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.formatNumberNoDecimalWithSymbol($F{simbolo}, $F{premioTotal})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="14" y="218" width="72" height="15" uuid="2c3fc328-b568-4f06-ac01-27fbefa663c4">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Ctas.Soc.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="14" y="182" width="72" height="15" uuid="a6401a29-33f8-4eda-b81c-ca85c0116ae8">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Prima:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="204" y="194" width="72" height="15" uuid="dd5c477a-67fa-4975-bd9a-7eaf202147e9">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[I.V.A.:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="112" y="182" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="12f3e990-5b2f-492e-8b3f-f6689cae5dab">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.formatNumber($F{primaTotal})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="14" y="206" width="72" height="15" uuid="31db691c-e3eb-4f7a-83a9-abfede06fd92">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[T.E.A.:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="112" y="206" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="f07659b9-a5ae-4bcf-aa99-d05c011fccd3">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.formatNumberPercent($F{tea})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="399" y="194" width="72" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="04973f6f-04f2-406a-b15e-fd89ddf3f802">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[***********]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="399" y="182" width="72" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="051782d7-dc5d-4127-9d6d-b4ee6cbbff51">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[***********]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="204" y="218" width="72" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="e2b973a2-82fd-43f6-a578-3a119bdecacf">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[***********]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="305" y="218" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="99237df3-da6a-45bb-9342-e3c2558dbd49">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[***********]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="499" y="182" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="fec86297-493e-4a56-8da2-ad29d76e983f">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[***********]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="499" y="194" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="d73da306-8777-41a0-bb20-2f4487e4ea34">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[***********]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="499" y="206" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="c3397ec6-e732-4276-99f9-30f37109ab82">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[***********]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="1" width="268" height="15" uuid="bbef2cdb-7a0a-4122-9212-9da995294cc8">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Código de LINK PAGOS/PAGO MIS CUENTAS: "+$F{codigoPagosLink}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="153">
+			<frame>
+				<reportElement x="0" y="1" width="572" height="152" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="7d0be462-5eac-41f6-bd41-dfbd625cc3fe">
+					<printWhenExpression><![CDATA[!($P{conAcreedorPrendario}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textField>
+					<reportElement x="7" y="121" width="421" height="30" uuid="77c7ed9a-97a0-4f01-a6a7-197bb422dcac"/>
+					<textElement>
+						<font size="6"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DECLARO BAJO JURAMENTO QUE LAS CONDICIONES DE ACEPTACIÓN DE LA COBERTURA Y DE EMISIÓN DE LA PRESENTE PÓLIZA RESPONDEN A LAS QUE PROPUSE CON EL ASESORAMIENTO DEL PRODUCTOR ASESOR DE SEGUROS SR "+$F{productorApellidoNombre}+", MATRÍCULA SSN N°"+$F{matricula}+", LAS QUE ME FUERON PREVIAMENTE EXPUESTAS Y EXPLICADAS (ARTS. 4, 11, 12 LEY 17.418, Y ARTS. 24 Y 25 LEY 20.091, ART. 10 LEY 22.400)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="125" y="62" width="438" height="15" isPrintWhenDetailOverflows="true" uuid="e0cc19d1-d76c-4e0c-96f8-8878e086569c">
+						<property name="ireport.layer" value="1"/>
+						<printWhenExpression><![CDATA[!($P{conAcreedorPrendario}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{aseguradoView}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="125" y="47" width="438" height="15" backcolor="#D0CBCB" uuid="f8d5159c-f58e-4255-9ac7-15b3908e2320">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Asegurado o Tomador]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="318" y="21" width="155" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="092c098d-a40e-4352-b612-8192317e8416">
+						<property name="ireport.layer" value="1"/>
+						<printWhenExpression><![CDATA[!($P{conAcreedorPrendario}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{numeroPolizaView}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="318" y="6" width="155" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="d03e9adc-acda-4a36-b781-9b28c619ed49">
+						<property name="ireport.layer" value="1"/>
+						<printWhenExpression><![CDATA[!($P{conAcreedorPrendario}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Póliza]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="88" width="413" height="34" uuid="cce33ad3-ea82-41ea-88d6-21d28c52bba2">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<textElement>
+						<font size="9"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Por la presente dejo constancia de haber recibido la póliza / endoso cuyo número consta
+en la presente, el plan de pagos que forma parte integrante de la misma, las cláusulas
+adicionales y las condiciones generales.]]></text>
+				</staticText>
+				<line>
+					<reportElement x="439" y="109" width="128" height="1" uuid="2fa2ca3c-c196-4686-802b-04fe18b59307">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="440" y="135" width="128" height="1" uuid="faa578d8-9ff5-4078-a34c-07e3acb7639b">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="448" y="109" width="111" height="12" uuid="72bd1feb-7b49-44a9-b53d-af48aa806a33">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[FIRMA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="454" y="139" width="111" height="12" uuid="76de3fd3-25b3-4519-94fb-1ae129e6fc7a">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ACLARACIÓN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="473" y="6" width="89" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="d8d4bd76-c511-4eda-bb2f-b587099eaabb">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Endoso]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="473" y="21" width="89" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="8d2538c1-f6a3-4390-9987-e1fb8b6571b3">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{endoso}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image isUsingCache="true">
+				<reportElement stretchType="RelativeToTallestObject" x="4" y="6" width="118" height="42" uuid="81a41e73-40b1-4f62-b5de-a2c2da275bf6">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="2" width="572" height="1" uuid="d08fc887-4b5e-45e8-b4fc-6b6ed13e75ff">
+					<printWhenExpression><![CDATA[$P{hojaBlanca}]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="3" y="45" width="120" height="43" uuid="d3464722-c972-4a13-bc71-725ed9304814">
+					<property name="ireport.layer" value="1"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="5"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CUIT: 30-50006171-1
+Congreso de Tucumán 21
+Servicio 24 hs. 0810-888-7080.
+(E3260FTA) Concepción del Uruguay - Entre Ríos
+Internet: http://www.riouruguay.com.ar
+E-Mail: atencionalasegurado@riouruguay.com.ar]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="5" y="4" width="567" height="147" uuid="e8c074bc-fa13-44e9-88f7-c3910f9b10d8">
+					<printWhenExpression><![CDATA[($P{conAcreedorPrendario}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textField>
+					<reportElement x="123" y="48" width="237" height="12" uuid="376038ca-e331-4e4f-a332-666526c6ceea"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{acreedorPrendario}.getPersona().getNombreORazonSocial()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="360" y="48" width="194" height="12" uuid="53c1035c-66fe-471a-8f89-44b59d79b9c5"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{acreedorPrendario}.getPersona().getLocalidadImporter().getNombre()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="360" y="3" width="108" height="12" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#D0CBCB" uuid="54bac013-5485-4e5f-801b-714264f1fb31">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Póliza]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="468" y="3" width="87" height="12" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#D0CBCB" uuid="2a231144-2516-4ef9-9788-735d824d2bed">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Endoso]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="468" y="15" width="87" height="12" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="8d02fde9-172c-4296-8958-136d639ff9e1">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{endoso}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="360" y="15" width="107" height="12" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="febe68c9-fa50-459d-8773-25df824b2ab5">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{numeroPolizaView}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="123" y="3" width="237" height="12" backcolor="#D0CBCB" uuid="308811ba-e5b0-4e81-87e6-25254b5484be">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Asegurado / Tomador]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="123" y="15" width="237" height="12" isPrintWhenDetailOverflows="true" uuid="2346b211-8054-440a-906c-4552a2a137a4">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tomadorView}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="123" y="39" width="237" height="9" backcolor="#D0CBCB" uuid="8464bd12-8938-4fea-bcaa-b1e4fd71899e">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="5" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[NOMBRE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="360" y="39" width="194" height="9" backcolor="#D0CBCB" uuid="c1f27770-09eb-4746-b52f-c193a66165cc">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="5" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[LOCALIDAD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="123" y="60" width="237" height="9" backcolor="#D0CBCB" uuid="07cac29f-74eb-4622-bc64-1e41699d89e2">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="5" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[DIRECCION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="360" y="60" width="194" height="9" backcolor="#D0CBCB" uuid="e1ff0988-1bb7-4037-9ffa-8ba1ca0a0c5b">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="5" isBold="true" isItalic="false" isUnderline="false" pdfFontName="Times-Bold"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[PROVINCIA]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="123" y="69" width="237" height="12" uuid="13dcd6f3-622a-4e62-a018-b6468b166f4f"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{acreedorPrendario}.getPersona().getDomicilio()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="360" y="69" width="194" height="12" uuid="cce11ada-43fb-42c4-ac0a-c6e5ebd6d2cd"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{acreedorPrendario}.getPersona().getLocalidad().getProvincia().getNombre()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="85" width="413" height="62" uuid="bf03f789-ae87-4f28-be9e-05c5eea98491">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<textElement>
+						<font size="9"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Contrariamente a lo expresado en el Inciso III, apartado 2) de la Cláusula CA-CC 7.1, de
+las Condiciones Generales, en caso de siniestro RIO URUGUAY SEGUROS Cooperativa
+Limitada, se compromete a no oponer al acreedor prendario, la suspensión de la
+cobertura por falta de pago de la presente póliza y se hará responsable frente al mismo, y
+en la medida de su acreencia, del pago de la indemnización correspondiente.
+]]></text>
+				</staticText>
+				<image hAlign="Center" isUsingCache="true">
+					<reportElement positionType="Float" x="449" y="84" width="106" height="46" uuid="e50817b7-b0ab-4c84-abc2-3fcd706a3255">
+						<property name="ireport.layer" value="1"/>
+					</reportElement>
+					<imageExpression><![CDATA[$P{firmaPresidente}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="437" y="114" width="117" height="33" uuid="5a6908fd-d184-41d5-9882-01cc8e5ca2e8">
+						<property name="ireport.layer" value="2"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[RIO URUGUAY SEGUROS Coop.Ltda.
+Cr. Juan Carlos L. Godoy
+PRESIDENTE
+Consejo de Administración]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="123" y="27" width="432" height="12" forecolor="#000000" backcolor="#D0CBCB" uuid="9e884a42-7bc0-40e9-94a5-b48176df0dbb"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{tipoAcreedor} != null ? $P{tipoAcreedor}.getDesc() : "Acreedor Prendario"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="4" width="572" height="147" uuid="e02ff9ce-9a0c-4ba2-9037-a07fa0ce9dca">
+					<property name="ireport.layer" value="2"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</pageFooter>
+</jasperReport>

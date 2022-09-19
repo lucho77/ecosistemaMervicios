@@ -45,9 +45,9 @@ public class AlumnoController {
 
     @Put("/update/{id}")
     public HttpResponse update(@Body @Valid Alumno alumno,@NotNull @PathVariable Long  id) {
-    	alumnoService.update(id, alumno);
+    	Alumno alumnoMod = alumnoService.update(id, alumno);
         return HttpResponse
-                .noContent();
+                .created(alumnoMod);
     }
 
     @Post("/add")

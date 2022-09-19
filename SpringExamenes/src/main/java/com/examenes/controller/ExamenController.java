@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.examenes.model.Examen;
+import com.examenes.service.ExamenService;
 
-@RestController("/alumno")
-public class ExamenController {
+@RestController("/examenes")
+public class ExamenController extends CommonController<Examen, ExamenService> {
 
 	
 	@PutMapping("/{id}")
